@@ -3,6 +3,7 @@ import { Row, Col, Container } from 'reactstrap'
 
 import './App.css';
 import WeatherComponent from './components/weather/WeatherComponent'
+import ZomatoApi from './zomato/Zomato';
 
 function App() {
 
@@ -26,7 +27,8 @@ function App() {
           <WeatherComponent latitude={latitude} longitude={longitude}/>
         </Col>
       </Row>
-    </Container>
+      <ZomatoApi/>
+    </Container
   );
 }
 
