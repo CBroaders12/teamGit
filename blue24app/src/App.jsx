@@ -28,7 +28,7 @@ function App() {
         </Col>
       </Row>
       <ZomatoApi/>
-    </Container
+    </Container>
   );
 }
 
