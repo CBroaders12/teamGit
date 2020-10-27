@@ -36,3 +36,9 @@
     transform: rotate(360deg);
   }
 }
+
+.Cards {
+  width: 318px;
+  height: 180px;
+  border: solid black;
+}
