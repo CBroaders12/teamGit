@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 const baseURL = 'https://api.nasa.gov/planetary/earth/assets';
-const APIkey = '&api_key=8XcfrD7gyh4pLMLMQ3DR4BEOK4PeVIRpXyjCkzkI'; 
+const APIkey = '&api_key=gLXgS0oyJ9sppHJQrvddifM7GmIXCHajGiwb6Nu8'; 
 const date = '&date=2020-10-26';
 const lat = '&lat=39.791000';
 const lon = '?lon=-86.148003';
@@ -13,6 +13,7 @@ const NasaComponent = (props) => {
   fetch(baseURL+lon+lat+date+APIkey)
   .then(response => response.json())
   .then(json => setResults(json.url));
+  ;
 
   return (
     <div>
