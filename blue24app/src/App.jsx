@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import { Row, Col, Container } from 'reactstrap'
 
 import './App.css';
@@ -6,15 +6,16 @@ import WeatherComponent from './components/weather/WeatherComponent'
 
 function App() {
 
-  const [ latitude, setLatitude ] = useState(39.86);
+  // Default to Indianapolis if browser does not support geolocation
+  const [ latitude, setLatitude ] = useState(39.86);    
   const [ longitude, setLongitude ] = useState(-86.13);
 
   const getCoordinates = position => {
-    setLatitude(Math.round(position.coords.latitude * 100) / 100);
+    setLatitude(Math.round(position.coords.latitude * 100) / 100);    //Round to 2 Decimal places
     setLongitude(Math.round(position.coords.longitude * 100) / 100);
-  }
+  };
 
-  navigator.geolocation.getCurrentPosition(getCoordinates, console.log);
+  useEffect(() => navigator.geolocation.getCurrentPosition(getCoordinates, console.log), [])
 
   return (
     <Container fluid="md">
