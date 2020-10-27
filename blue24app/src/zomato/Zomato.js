@@ -32,13 +32,13 @@ const ZomatoApi = (props) => {
     console.log(response);
     return(
         <>
-            {response.nearby_restaurants.map(restaurant => {
+            {response.nearby_restaurants?.map(restaurant => {
                 return(
                     <Col sm="6" key={restaurant.restaurant.id}>
-          <CardBody>
+          <CardBody className='Cards'>
             <CardTitle>{restaurant.restaurant.name}</CardTitle>
-            <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
-            <CardImg width="100%" src="/assets/318x180.svg" alt="Card image cap" />
+            <CardText>{restaurant.restaurant.cuisines}</CardText>
+            <h3>Rating: {restaurant.restaurant.user_rating.rating_text}</h3>
           </CardBody>
         </Col>
 
